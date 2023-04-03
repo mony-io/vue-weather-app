@@ -15,7 +15,7 @@
               class="text-white mt-8 bg-weather-primary py-2 px-6"
               @click="$emit('close-modal')"
             >
-              Close
+              ចាកចេញ
             </button>
           </div>
         </Transition>

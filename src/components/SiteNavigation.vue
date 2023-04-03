@@ -1,59 +1,53 @@
 <template>
   <header class="sticky top-0 bg-weather-primary shadow-lg">
-    <nav
-      class="container flex flex-col sm:flex-row items-center gap-4 text-white py-6"
-    >
+    <nav class="container flex flex-col sm:flex-row items-center gap-4 text-white py-6">
       <RouterLink :to="{ name: 'home' }">
         <div class="flex items-center gap-3">
           <i class="fa-solid fa-sun text-2xl"></i>
-          <p class="text-2xl">The Local Weather</p>
+          <p class="text-2xl">
+            អាកាសធាតុក្នុងស្រុក
+          </p>
         </div>
       </RouterLink>
 
       <div class="flex gap-3 flex-1 justify-end">
-        <i
-          class="fa-solid fa-circle-info text-xl hover:text-weather-secondary duration-150 cursor-pointer"
-          @click="toggleModal"
-        ></i>
-        <i
-          class="fa-solid fa-plus text-xl hover:text-weather-secondary duration-150 cursor-pointer"
-          @click="addCity"
-          v-if="route.query"
-        ></i>
+        <i class="fa-solid fa-circle-info text-xl hover:text-weather-secondary duration-150 cursor-pointer"
+          @click="toggleModal"></i>
+        <i class="fa-solid fa-plus text-xl hover:text-weather-secondary duration-150 cursor-pointer" @click="addCity"
+          v-if="route.query"></i>
       </div>
 
-      <BaseModal
-        :modalActive="modalActive"
-        @close-modal="toggleModal"
-      >
+      <BaseModal :modalActive="modalActive" @close-modal="toggleModal">
         <div class="text-black">
-          <h1 class="text-2xl mb-1">About:</h1>
+          <h1 class="text-2xl mb-1">
+            អំពី:</h1>
           <p class="mb-4">
-            The Local Weather allows you to track the current and
-            future weather of cities of your choosing.
+            អាកាសធាតុក្នុងស្រុកអនុញ្ញាតឱ្យអ្នកតាមដានបច្ចុប្បន្ននិង
+            អាកាសធាតុនាពេលអនាគតនៃទីក្រុងដែលអ្នកជ្រើសរើស។
           </p>
-          <h2 class="text-2xl">How it works:</h2>
+          <h2 class="text-2xl">របៀបដែលវាដំណើរការ:</h2>
           <ol class="list-decimal list-inside mb-4">
             <li>
-              Search for your city by entering the name into the
-              search bar.
+              ស្វែងរកទីក្រុងរបស់អ្នកដោយបញ្ចូលឈ្មោះទៅក្នុង
+              របារស្វែងរក។
             </li>
             <li>
-              Select a city within the results, this will take
-              you to the current weather for your selection.
+              ជ្រើសរើសទីក្រុងមួយនៅក្នុងលទ្ធផល វានឹងកើតឡើង
+              អ្នកទៅកាន់អាកាសធាតុបច្ចុប្បន្នសម្រាប់ការជ្រើសរើសរបស់អ្នក។
             </li>
             <li>
-              Track the city by clicking on the "+" icon in the
-              top right. This will save the city to view at a
-              later time on the home page.
+              តាមដានទីក្រុងដោយចុចលើរូបតំណាង "+" នៅក្នុងផ្ទាំង
+              ខាងលើស្តាំ។ វានឹងរក្សាទុកទីក្រុងដើម្បីមើលនៅ a
+              ពេលក្រោយនៅលើទំព័រដើម។
             </li>
           </ol>
 
-          <h2 class="text-2xl">Removing a city</h2>
+          <h2 class="text-2xl">
+            ការដកទីក្រុងចេញ</h2>
           <p>
-            If you no longer wish to track a city, simply select
-            the city within the home page. At the bottom of the
-            page, there will be am option to delete the city.
+            ប្រសិនបើអ្នកលែងចង់តាមដានទីក្រុងទៀតហើយ សូមជ្រើសរើស
+            ទីក្រុងនៅក្នុងទំព័រដើម។ នៅផ្នែកខាងក្រោមនៃ
+            ទំព័រនឹងមានជម្រើសដើម្បីលុបទីក្រុង។
           </p>
         </div>
       </BaseModal>
